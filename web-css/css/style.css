@@ -1,0 +1,53 @@
+/* membuat body berwarna abu - abu dan font arial dan sans - serif ukuran 16px  */
+body {
+    background-color: grey;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* membuat canvas putih di tengah */
+.container {
+    background-color: white;
+    margin: 0 auto;
+    width: 800px;
+}
+
+mengatur jarak antara judul dan konten */ h1 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* mengatur tulisan judul  */
+.header .judul {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* untuk navigasi atau menu atas */
+.nav {
+    padding: 0;
+}
+
+.nav li {
+    /* membuat list navigasi menjadi horizontal dan mengatur jarak antar menu */
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+/* mengatur link navigasi */
+.nav li a {
+    /* untuk menghilangkan garis link navigasi */
+    text-decoration: none;
+    color: navy;
+}
+
+/* membuat animasi saat link disorot */
+.nav li a:hover {
+    background-color: purple;
+    color: white;
+    transition: 0.3s;
+}
