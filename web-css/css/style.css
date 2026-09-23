@@ -12,7 +12,8 @@ body {
     width: 800px;
 }
 
-mengatur jarak antara judul dan konten */ h1 {
+/* mengatur jarak antara judul dan konten */
+h1 {
     padding-top: 20px;
     padding-left: 20px;
     padding-right: 20px;
@@ -77,18 +78,18 @@ mengatur jarak antara judul dan konten */ h1 {
 }
 
 .isi penulis {
-    font-size: 14px;
+    font-size: 12px;
     /* agar agak naik */
     margin-top: -10px;
 }
 
-.isi penulis a {
+.isi .penulis a {
     text-decoration: none;
     color: skyblue;
 }
 
 .isi p {
-    font-size: 16px;
+    font-size: 12px;
     margin-bottom: 10px;
 }
 
