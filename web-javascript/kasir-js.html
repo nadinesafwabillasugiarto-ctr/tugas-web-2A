@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KASIR-JS</title>
+    <style>
+        /* Memastikan font Monospace agar lebar spasi dan karakter presisi seragam */
+        pre {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 1.2;
+            background-color: #f8f9fa;
+            padding: 15px;
+            display: inline-block;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tugas Praktikum - Kasir JS</h1>
+
+    <script type="text/javascript">
+        // 1. Input data via popup prompt
+        let namaBarang = prompt("Masukkan nama barang:") || "sepatu";
+        let hargaBarang = prompt("Masukkan harga barang:") || 0;
+        let qtyInput = prompt("Masukkan jumlah beli (qty):") || 0;
+
+        // Konversi tipe data ke angka
+        let harga = parseFloat(hargaBarang);
+        let qty = parseInt(qtyInput);
+
+        // Hitung total awal
+        let total = harga * qty;
+
+        // 2. Logika Diskon: Jika total > 50.000 dapat diskon 10%
+        let diskon = 0;
+        if (total > 50000) {
+            diskon = total * 0.10;
+        }
+
+        // Hitung total pembayaran setelah diskon
+        let pembayaran = total - diskon;
+
+        // Format angka ribuan (contoh: 30000 -> 30.000)
+        let hargaFmt = harga.toLocaleString('id-ID');
+        let totalFmt = total.toLocaleString('id-ID');
+        let diskonFmt = diskon.toLocaleString('id-ID');
+        let bayarFmt = pembayaran.toLocaleString('id-ID');
+
+        // Fungsi pembantu untuk merapikan spasi (padding)
+        function formatSpasi(teks, panjang, rataKanan = false) {
+            teks = String(teks);
+            if (teks.length > panjang) {
+                return teks.substring(0, panjang);
+            }
+            return rataKanan ? teks.padStart(panjang, ' ') : teks.padEnd(panjang, ' ');
+        }
+
+        // Penyusunan teks struk belanja (lebar total 35 karakter)
+        let border = "+++++++++++++++++++++++++++++++++++";
+        let barisKosong = "+                                 +";
+
+        let header = "+ " + formatSpasi("nama", 8) + " "
+            + formatSpasi("Harga", 8, true) + " "
+            + formatSpasi("qty", 3, true) + " "
+            + formatSpasi("total", 8, true) + " +";
+
+        let barisNama = "+ " + formatSpasi(namaBarang, 31) + " +";
+
+        let barisRincian = "+ " + formatSpasi("", 8) + " "
+            + formatSpasi(hargaFmt, 8, true) + " "
+            + formatSpasi(qty, 3, true) + " "
+            + formatSpasi(totalFmt, 8, true) + " +";
+
+        let barisTotal = "+ " + formatSpasi("total belanja", 17) + " " + formatSpasi(totalFmt, 13, true) + " +";
+        let barisDiskon = "+ " + formatSpasi("diskon", 17) + " " + formatSpasi(diskonFmt, 13, true) + " +";
+        let barisBayar = "+ " + formatSpasi("pembayaran", 17) + " " + formatSpasi(bayarFmt, 13, true) + " +";
+
+        // Gabungkan seluruh baris struk
+        let struk = border + "<br>" +
+            barisKosong + "<br>" +
+            header + "<br>" +
+            barisNama + "<br>" +
+            barisRincian + "<br>" +
+            barisKosong + "<br>" +
+            barisTotal + "<br>" +
+            barisDiskon + "<br>" +
+            barisBayar + "<br>" +
+            barisKosong + "<br>" +
+            border;
+
+        // 3. Menampilkan Struk Belanja di LUAR popup (di halaman HTML)
+        document.write("<h3>Struk Belanja:</h3>");
+        document.write("<pre>");
+        document.write(struk);
+        document.write("</pre>");
+    </script>
+</body>
+
+</html>
