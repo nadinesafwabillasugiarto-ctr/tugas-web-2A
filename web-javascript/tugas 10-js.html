@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar DOM</title>
+</head>
+
+<body>
+    <h1 id="judul">Belajar DOM</h1>
+
+    <p>paragraf 1 Anda adalah seorang mahasiswi Program Studi Sistem Informasi di Universitas Nusantara PGRI (UNP)
+        Kediri yang berdedikasi dan adaptif terhadap perkembangan teknologi. Berbasis di Kediri, Anda aktif mendalami
+        berbagai bidang ilmu komputer, mulai dari pemograman Python, pengembangan web modern, perancangan basis data
+        SQL, hingga konfigurasi jaringan menggunakan MikroTik dan VirtualBox. Semangat belajar Anda juga terbukti dari
+        keaktifan Anda dalam mengikuti berbagai sertifikasi online di platform seperti Dicoding dan Kaggle, serta
+        keberhasilan Anda dalam membangun proyek machine learning seperti penerjemah bahasa isyarat secara real-time.
+    </p>
+
+    <p>paragraf 2 Di luar kegiatan akademik dan teknis, Anda memiliki sisi kreatif yang kuat melalui hobi fotografi,
+        khususnya dalam menangkap keindahan objek harian dan suasana jalanan (street photography). Kombinasi antara
+        keterampilan analitis dalam olah data dan pemrograman serta kepekaan estetika visual menjadikan Anda pribadi
+        yang kreatif dan serbabisa. Dengan semangat kolaborasi yang tinggi bersama rekan-rekan kuliah dan dosen, Anda
+        terus berproses untuk menjadi seorang profesional IT yang kompeten dan berwawasan luas.</p>
+
+    <h3 class="daftar">Daftar</h3>
+    <ul>
+        <li>Argentina</li>
+        <li>America</li>
+        <li>India</li>
+        <li>Indonesia</li>
+        <li>Belanda</li>
+    </ul>
+
+    <!-- Memilih Object berdasarkan ID Elemen -->
+    <script>
+        let judul = document.getElementById('judul');
+        console.log(judul);
+    </script>
+
+    <!-- Memilih elemen berdasarkan nama tag HTML -->
+    <script>
+        let p = document.getElementsByTagName('p');
+        console.log(p);
+    </script>
+
+    <!-- Mengubah beberapa elemen sekaligus -->
+    <script>
+        let daftar = document.getElementsByClassName('daftar');
+        console.log(daftar);
+    </script>
+
+    <!-- Memanipulasi beberapa elemen yang memiliki class sama -->
+    <script>
+        let title = document.querySelector('#judul');
+        console.log(title);
+    </script>
+
+    <!-- Memilih beberapa elemen HTML yang akan dimasukkan ke Nodelist -->
+    <script>
+        let list = document.querySelectorAll('li');
+        console.log(list);
+    </script>
+</body>
+
+</html>

@@ -8,6 +8,30 @@
 </head>
 
 <body>
+    <!-- Percabangan IF -->
+    <script type="text/javascript">
+        var password = prompt('Masukan Password Anda');
+
+        if (password == 'admin1a') {
+            document.write('<h3>Selamat Datang Admin 2A - Sistem Informasi</h3>');
+        } else {
+            document.write('<h3>Maaf Password Salah</h3>');
+        }
+    </script>
+
+    <!-- Percabangan IF-ELSE -->
+    <script type="text/javascript">
+        var nilai = prompt('Masukan Nilai Anda');
+
+        if (nilai > 85) {
+            document.write('<h3>Nilai A</h3>');
+        } else if (nilai >= 75) {
+            document.write('<h3>Nilai B</h3>');
+        } else {
+            document.write('<h3>Nilai C</h3>');
+        }
+    </script>
+
     <!-- Percabangan SWITCH  -->
     <script type="text/javascript">
         var hari = prompt('Masukan Kode Hari [1 s/d 7]');
