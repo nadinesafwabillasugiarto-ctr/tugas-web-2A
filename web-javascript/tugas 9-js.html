@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penggunaan Object dalam Javascript</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // membuat Object
+
+        var obj = {
+            penulis: "Nadine Safwabilla",
+            buku: [
+                "Modul Pemrograman Dasar Pemrograman",
+                "Modul Database Pemrograman",
+            ],
+            hal: 109,
+            isTerbit: true
+        }
+
+        console.log(obj);
+    </script>
+
+    <script type="text/javascript">
+        //membuat object dengan construtor
+
+        function orang(nama, gender, umur, alamat) {
+            this.nama = nama;
+            this.gender = gender;
+            this.umur = umur;
+            this.alamat = alamat;
+        }
+
+        //membuat instance object
+        var Dewasa = new orang("Nadine", "P", 18, ['jalan Donongali', 'badas', 'kab kediri']);
+
+        console.log(Dewasa);
+    </script>
+</body>
+
+</html>
