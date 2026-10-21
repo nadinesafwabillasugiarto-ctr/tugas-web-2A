@@ -73,7 +73,116 @@
     <!-- Konten Utama (Semantik main) -->
     <main class="container py-3">
         <div class="row g-4">
-            <div class="col-lg-8"></div>
+            <div class="col-lg-8">
+                <!-- Bagian Tentang Diri -->
+                <section id="tentang" class="bg-white p-4 p-md-5 rounded-4 border shadow-sm mb-4" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <h2 class="h4 fw-bold mb-3">Tentang Saya</h2>
+                    <p class="text-secondary mb-3">
+                        Halo! Saya Nadine Safwabilla, mahasiswi Sistem Informasi di Universitas Nusantara PGRI Kediri.
+                        Dalam perkuliahan, saya mendalami perancangan alur kerja sistem menggunakan <strong>BPMN (Bizagi
+                            Modeler)</strong>, implementasi basis data relasional di <strong>MySQL /
+                            phpMyAdmin</strong>, serta pembuatan antarmuka web responsif berbasis Bootstrap dan
+                        manipulasi DOM JavaScript.
+                    </p>
+                    <div class="d-flex gap-2 flex-wrap">
+                        <span class="badge bg-light text-dark border px-3 py-2">Bizagi BPMN</span>
+                        <span class="badge bg-light text-dark border px-3 py-2">MySQL / MariaDB</span>
+                        <span class="badge bg-light text-dark border px-3 py-2">JavaScript DOM</span>
+                        <span class="badge bg-light text-dark border px-3 py-2">Visual Photography</span>
+                    </div>
+                </section>
+
+                <!-- Bagian Showcase 3 Proyek Mata Kuliah -->
+                <section id="proyek" class="bg-white p-4 p-md-5 rounded-4 border shadow-sm mb-4" data-aos="fade-up"
+                    data-aos-delay="150">
+                    <div
+                        class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2 mb-4">
+                        <div>
+                            <h2 class="h4 fw-bold mb-1">Showcase Proyek Perkuliahan</h2>
+                            <small class="text-secondary">Integrasi tugas mata kuliah ke dalam satu dashboard web
+                                terpadu</small>
+                        </div>
+                        <!-- Interaktivitas DOM: Pencarian Langsung -->
+                        <div class="col-md-5">
+                            <input type="text" id="cari-proyek" class="form-control form-control-sm"
+                                placeholder="Cari proyek (BPMN, SQL, Web)...">
+                        </div>
+                    </div>
+
+                    <div class="row g-3" id="daftar-proyek">
+
+                        <!-- Proyek 1: Analisis Proses Bisnis (BPMN) -->
+                        <article class="col-md-12 item-proyek" data-kategori="bpmn proses bisnis analisis"
+                            data-aos="fade-up" data-aos-delay="100">
+                            <div class="card h-100 border rounded-3 p-3">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-warning-subtle text-warning-emphasis">Analisis Proses
+                                        Bisnis</span>
+                                    <small class="text-muted">Kelompok 3 • Bizagi Modeler</small>
+                                </div>
+                                <h3 class="h5 fw-bold">Pemodelan Alur Layanan Fotocopy & Print (AS-IS)</h3>
+                                <p class="text-secondary small mb-2">
+                                    Memodelkan alur interaksi antara Pelanggan dan Operator Kasir: mulai dari penyerahan
+                                    berkas fisik atau via WhatsApp, pengecekan kelayakan dokumen pada gateway
+                                    percabangan, penghitungan total tarif, transaksi pembayaran tunai/QRIS, hingga
+                                    penyerahan hasil cetakan.
+                                </p>
+                                <div class="small text-muted border-top pt-2">
+                                    <strong>Output:</strong> Diagram alur operasional cetak offline (Swimlane diagram).
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Proyek 2: Basis Data (MySQL / phpMyAdmin) -->
+                        <article class="col-md-12 item-proyek" data-kategori="database basis data mysql sql phpmyadmin"
+                            data-aos="fade-up" data-aos-delay="200">
+                            <div class="card h-100 border rounded-3 p-3">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-primary-subtle text-primary-emphasis">Basis Data</span>
+                                    <small class="text-muted">MariaDB • phpMyAdmin</small>
+                                </div>
+                                <h3 class="h5 fw-bold">Skema Basis Data Sistem Percetakan (tugas5_percetakan)</h3>
+                                <p class="text-secondary small mb-2">
+                                    Perancangan basis data transaksi percetakan lengkap dengan relasi Primary Key dan
+                                    Foreign Key. Terdiri dari tabel: <code>pelanggan</code>, <code>kartu_member</code>
+                                    (poin reward), <code>jenis_print</code> (katalog tarif cetak),
+                                    <code>transaksi</code>, dan <code>detail_transaksi</code>.
+                                </p>
+                                <div class="small text-muted border-top pt-2">
+                                    <strong>Output:</strong> Struktur skema SQL dan integritas relasi referensial
+                                    (CASCADE / SET NULL).
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Proyek 3: Pemrograman Web (Galeri Fotografi) -->
+                        <article class="col-md-12 item-proyek"
+                            data-kategori="web frontend bootstrap html visual gallery foto" data-aos="fade-up"
+                            data-aos-delay="300">
+                            <div class="card h-100 border rounded-3 p-3">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-success-subtle text-success-emphasis">Pemrograman Web</span>
+                                    <small class="text-muted">Bootstrap 5 • Responsif</small>
+                                </div>
+                                <h3 class="h5 fw-bold">Nadine Gallery & Visual Photography Journal</h3>
+                                <p class="text-secondary small mb-2">
+                                    Pembuatan antarmuka web portofolio galeri foto yang responsif dengan konsep visual
+                                    estetik dan tenang. Menggunakan grid layout adaptif untuk kenyamanan tampilan di
+                                    perangkat ponsel maupun layar komputer.
+                                </p>
+                                <div class="small text-muted border-top pt-2">
+                                    <strong>Output:</strong> Struktur HTML5 semantik, CSS kustom, dan interaktivitas
+                                    DOM.
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                    <p id="pesan-kosong" class="text-center text-muted py-3 d-none">Proyek yang dicari tidak ditemukan.
+                    </p>
+                </section>
+            </div>
             <aside class="col-lg-4"></aside>
         </div>
     </main>
