@@ -116,4 +116,48 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("form-kalkulator").reset();
         outputKalkulator.classList.add("d-none");
     });
+
+    // ==========================================
+    // 4. FITUR VALIDASI FORMULIR KONTAK
+    // ==========================================
+    const formKontak = document.getElementById("form-kontak");
+    const inputNama = document.getElementById("nama");
+    const inputEmail = document.getElementById("email");
+    const inputPesan = document.getElementById("pesan");
+    const alertKontak = document.getElementById("alert-kontak");
+
+    formKontak.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let valid = true;
+
+        if (inputNama.value.trim().length < 3) {
+            document.getElementById("err-nama").classList.remove("d-none");
+            valid = false;
+        } else {
+            document.getElementById("err-nama").classList.add("d-none");
+        }
+
+        const polaEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!polaEmail.test(inputEmail.value.trim())) {
+            document.getElementById("err-email").classList.remove("d-none");
+            valid = false;
+        } else {
+            document.getElementById("err-email").classList.add("d-none");
+        }
+
+        if (inputPesan.value.trim() === "") {
+            document.getElementById("err-pesan").classList.remove("d-none");
+            valid = false;
+        } else {
+            document.getElementById("err-pesan").classList.add("d-none");
+        }
+
+        if (valid) {
+            alertKontak.classList.remove("d-none");
+            formKontak.reset();
+            setTimeout(function () {
+                alertKontak.classList.add("d-none");
+            }, 4000);
+        }
+    });
 });
