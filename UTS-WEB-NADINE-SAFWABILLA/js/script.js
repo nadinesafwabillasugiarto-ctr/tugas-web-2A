@@ -27,4 +27,33 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // ==========================================
+    // 2. FITUR PENCARIAN LANGSUNG (LIVE SEARCH PROYEK)
+    // ==========================================
+    const inputCari = document.getElementById("cari-proyek");
+    const daftarKartu = document.querySelectorAll(".item-proyek");
+    const pesanKosong = document.getElementById("pesan-kosong");
+
+    inputCari.addEventListener("input", function () {
+        const kataKunci = inputCari.value.toLowerCase().trim();
+        let jumlahDitemukan = 0;
+
+        daftarKartu.forEach(function (kartu) {
+            const teksKonten = kartu.innerText.toLowerCase();
+            const kategori = kartu.getAttribute("data-kategori").toLowerCase();
+
+            if (teksKonten.includes(kataKunci) || kategori.includes(kataKunci)) {
+                kartu.classList.remove("d-none");
+                jumlahDitemukan++;
+            } else {
+                kartu.classList.add("d-none");
+            }
+        });
+
+        if (jumlahDitemukan === 0) {
+            pesanKosong.classList.remove("d-none");
+        } else {
+            pesanKosong.classList.add("d-none");
+        }
+    });
 });
