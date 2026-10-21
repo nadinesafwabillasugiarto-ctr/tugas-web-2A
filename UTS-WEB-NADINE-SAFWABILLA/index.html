@@ -73,7 +73,10 @@
     <!-- Konten Utama (Semantik main) -->
     <main class="container py-3">
         <div class="row g-4">
+
+            <!-- Kolom Kiri: Portofolio Proyek, Profil, dan Modul Interaktif -->
             <div class="col-lg-8">
+
                 <!-- Bagian Tentang Diri -->
                 <section id="tentang" class="bg-white p-4 p-md-5 rounded-4 border shadow-sm mb-4" data-aos="fade-up"
                     data-aos-delay="100">
@@ -181,6 +184,90 @@
                     </div>
                     <p id="pesan-kosong" class="text-center text-muted py-3 d-none">Proyek yang dicari tidak ditemukan.
                     </p>
+                </section>
+
+                <!-- Modul Kalkulator: Simulasi Kasir Cetak (BPMN & Basis Data) -->
+                <section id="kalkulator" class="bg-white p-4 p-md-5 rounded-4 border shadow-sm mb-4" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <div class="border-bottom pb-3 mb-3">
+                        <span class="badge bg-dark mb-1">Modul Praktik JS</span>
+                        <h2 class="h4 fw-bold mb-1">Simulasi Kasir Cetak (Kalkulator BPMN & Basis Data)</h2>
+                        <p class="text-secondary small mb-0">
+                            Mengimplementasikan tahap <em>"Menghitung Total Biaya"</em> pada alur BPMN dengan daftar
+                            tarif riil dari tabel <code>jenis_print</code> basis data.
+                        </p>
+                    </div>
+
+                    <form id="form-kalkulator" onsubmit="return false;">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="tipe-print" class="form-label small fw-semibold">Pilihan Layanan & Kertas
+                                    (Tabel jenis_print)</label>
+                                <select id="tipe-print" class="form-select form-select-sm">
+                                    <option value="PRT-HVS-A4">PRT-HVS-A4 (Kertas HVS A4 - Rp 1.500 / lbr)</option>
+                                    <option value="PRT-HVS-F4">PRT-HVS-F4 (Kertas HVS F4 - Rp 1.500 / lbr)</option>
+                                    <option value="CTK-FTO-4R">CTK-FTO-4R (Cetak Foto 4R - Rp 6.000 / lbr)</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="jumlah-lembar" class="form-label small fw-semibold">Jumlah Lembar</label>
+                                <input type="number" id="jumlah-lembar" class="form-control form-control-sm" min="1"
+                                    max="1000" value="1">
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label small fw-semibold d-block">Pilihan Tambahan:</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="finishing-jilid" value="5000">
+                                    <label class="form-check-label small" for="finishing-jilid">Finishing Jilid (+Rp
+                                        5.000)</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="member-diskon">
+                                    <label class="form-check-label small" for="member-diskon">Diskon Member (Tabel
+                                        kartu_member - Potongan 10%)</label>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <button type="button" id="btn-hitung"
+                                    class="btn btn-dark btn-sm px-4 rounded-pill">Hitung Biaya</button>
+                                <button type="button" id="btn-reset-kalkulator"
+                                    class="btn btn-outline-secondary btn-sm px-3 rounded-pill ms-2">Reset</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Tampilan Output DOM Kalkulator dengan Rincian Nota -->
+                    <div id="output-kalkulator" class="mt-4 p-4 bg-light rounded-3 border d-none">
+                        <h5 class="fw-bold mb-3 border-bottom pb-2">Rincian Perhitungan Transaksi</h5>
+
+                        <div class="d-flex justify-content-between small text-secondary mb-1">
+                            <span>Subtotal Cetak (<span id="rincian-qty">0</span> lbr):</span>
+                            <span id="rincian-subtotal" class="fw-semibold text-dark">Rp 0</span>
+                        </div>
+
+                        <div class="d-flex justify-content-between small text-secondary mb-1">
+                            <span>Biaya Tambahan (Finishing Jilid):</span>
+                            <span id="rincian-jilid" class="fw-semibold text-dark">Rp 0</span>
+                        </div>
+
+                        <div class="d-flex justify-content-between small text-secondary mb-2 border-bottom pb-2">
+                            <span>Diskon Member (10%):</span>
+                            <span id="rincian-diskon" class="fw-semibold text-danger">- Rp 0</span>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="fw-bold text-dark">Total Akhir Tagihan:</span>
+                            <span id="hasil-biaya" class="h4 fw-bold text-dark mb-0">Rp 0</span>
+                        </div>
+
+                        <div class="p-2 rounded bg-white border small text-muted">
+                            <strong>Status Alur Dokumen:</strong> <span id="hasil-waktu">Menunggu pembayaran
+                                dikonfirmasi</span>
+                        </div>
+                    </div>
                 </section>
             </div>
             <aside class="col-lg-4"></aside>
