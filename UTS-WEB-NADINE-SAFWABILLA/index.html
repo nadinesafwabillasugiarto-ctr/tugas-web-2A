@@ -309,11 +309,96 @@
                         </div>
                     </form>
                 </section>
+
             </div>
-            <aside class="col-lg-4"></aside>
+
+            <!-- Kolom Kanan: Aside Informasi Akademik & Basis Data -->
+            <aside class="col-lg-4">
+
+                <!-- Informasi Mahasiswa -->
+                <div class="card border rounded-4 shadow-sm mb-4" data-aos="fade-left" data-aos-delay="200">
+                    <div class="card-header bg-white fw-bold py-3 border-bottom">
+                        Informasi Akademik
+                    </div>
+                    <div class="card-body small">
+                        <p class="mb-2"><strong>Nama:</strong> Nadine Safwabilla</p>
+                        <p class="mb-2"><strong>Institusi:</strong> Universitas Nusantara PGRI Kediri</p>
+                        <p class="mb-2"><strong>Fakultas:</strong> Teknik dan Ilmu Komputer</p>
+                        <p class="mb-2"><strong>Program Studi:</strong> Sistem Informasi</p>
+                        <p class="mb-0"><strong>Dosen Pengampu:</strong> Rudy Eko Prasetya, M.Kom.</p>
+                    </div>
+                </div>
+
+                <!-- Ringkasan Skema Database Percetakan -->
+                <div class="card border rounded-4 shadow-sm mb-4" data-aos="fade-left" data-aos-delay="300">
+                    <div class="card-header bg-white fw-bold py-3 border-bottom">
+                        Tabel Basis Data (Tugas 5)
+                    </div>
+                    <div class="card-body small p-0">
+                        <ul class="list-group list-group-flush rounded-bottom-4">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span><code>pelanggan</code></span>
+                                <span class="badge bg-secondary-subtle text-secondary">PK: nik</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span><code>kartu_member</code></span>
+                                <span class="badge bg-secondary-subtle text-secondary">FK: nik</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span><code>jenis_print</code></span>
+                                <span class="badge bg-secondary-subtle text-secondary">Tarif Katalog</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span><code>transaksi</code></span>
+                                <span class="badge bg-secondary-subtle text-secondary">Status Nota</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span><code>detail_transaksi</code></span>
+                                <span class="badge bg-secondary-subtle text-secondary">Relasi Item</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tautan GitHub -->
+                <div class="card border rounded-4 shadow-sm p-4 text-center bg-light" data-aos="fade-left"
+                    data-aos-delay="400">
+                    <h3 class="h6 fw-bold mb-2">Repositori GitHub</h3>
+                    <p class="small text-secondary mb-3">Kode sumber halaman ini tersimpan di repositori publik dan
+                        di-hosting via GitHub Pages.</p>
+                    <a href="https://github.com" target="_blank" class="btn btn-dark btn-sm rounded-pill px-3">
+                        <i class="bi bi-github me-1"></i> Buka GitHub
+                    </a>
+                </div>
+
+            </aside>
+
         </div>
     </main>
 
+    <!-- Footer Dokumen -->
+    <footer class="bg-white border-top text-center py-3 mt-4">
+        <div class="container text-secondary small">
+            <p class="mb-0">&copy; 2026 Nadine Safwabilla - UTS Pemrograman Web Sistem Informasi UNP Kediri.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Animate On Scroll (AOS) JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Skrip JavaScript Eksternal -->
+    <script src="js/script.js"></script>
+
+    <!-- Inisialisasi AOS Halus & Responsif -->
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
+    </script>
 </body>
 
 </html>
